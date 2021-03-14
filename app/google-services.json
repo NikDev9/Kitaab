@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "106508856843",
+    "project_id": "kitaab-1f50d",
+    "storage_bucket": "kitaab-1f50d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:106508856843:android:a3277941ebf2086c09610e",
+        "android_client_info": {
+          "package_name": "com.example.kitaab"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "106508856843-qo3abr8v500iu6cc44sjkc7uro8f7iur.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyConEyivOXzTqfMnLojCw0F1ezRSAKqT-c"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "106508856843-qo3abr8v500iu6cc44sjkc7uro8f7iur.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

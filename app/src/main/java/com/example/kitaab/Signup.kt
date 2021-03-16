@@ -2,8 +2,7 @@ package com.example.kitaab
 
 import android.content.Intent
 import android.os.Bundle
-import android.util.Log
-import android.view.View
+
 import android.widget.*
 import android.widget.Toast.LENGTH_SHORT
 import androidx.appcompat.app.AppCompatActivity
@@ -14,8 +13,6 @@ import com.google.firebase.database.FirebaseDatabase
 
 
 class Signup : AppCompatActivity() {
-
-    private val TAG = "MyActivity"
 
     private lateinit var buttonLogin: TextView
     private lateinit var buttonSignUp: Button

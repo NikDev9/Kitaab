@@ -1,4 +1,4 @@
-package com.example.kitaab
+package com.example.kitaab.View
 
 import android.content.Intent
 import android.os.Bundle
@@ -8,6 +8,7 @@ import android.widget.TextView
 import android.widget.Toast
 import android.widget.Toast.LENGTH_SHORT
 import androidx.appcompat.app.AppCompatActivity
+import com.example.kitaab.R
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
 
@@ -37,7 +38,7 @@ class Login : AppCompatActivity() {
             loginUser()
     }
 
-    fun loginUser()
+    private fun loginUser()
     {
         buttonRegister = findViewById(R.id.go_to_register)
         buttonLogin = findViewById(R.id.login)

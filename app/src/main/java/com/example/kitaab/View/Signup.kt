@@ -1,4 +1,4 @@
-package com.example.kitaab
+package com.example.kitaab.View
 
 import android.content.Intent
 import android.os.Bundle
@@ -7,6 +7,8 @@ import android.widget.*
 import android.widget.Toast.LENGTH_SHORT
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.isVisible
+import com.example.kitaab.Model.User
+import com.example.kitaab.R
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
@@ -60,19 +62,21 @@ class Signup : AppCompatActivity() {
                             if (task.isSuccessful)
                             {
                                 userId = mAuth.currentUser!!.uid
-                                dataRef = FirebaseDatabase.getInstance().reference.child("users").child(userId)
-                                val userHashMap = HashMap<String, Any>()
+                                dataRef = FirebaseDatabase.getInstance().reference.child("users")
+                                /*val userHashMap = HashMap<String, Any>()
                                 userHashMap["id"] = userId
                                 userHashMap["fullname"] = fullname.text.toString()
                                 userHashMap["email"] = email.text.toString()
-                                userHashMap["image"] = "gs://kitaab-1f50d.appspot.com/profile_picture.jpg"
-                                userHashMap["description"] = ""
+                                userHashMap["image"] = "user images/default_pic.jpg"
+                                userHashMap["description"] = ""*/
+                                //dataRef.updateChildren(userHashMap)
 
-                                dataRef.updateChildren(userHashMap)
+                                dataRef.child(userId).setValue(User(userId,fullname.text.toString(),email.text.toString(),"user images/default_pic.jpg",""))
                                     .addOnCompleteListener { task ->
                                         if(task.isSuccessful)
                                         {
                                             val intent = Intent(this, Library::class.java)
+                                            intent.putExtra("userId",userId)
                                             startActivity(intent)
                                             finish()
                                         }

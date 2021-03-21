@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:id="@+id/drawer"
-    tools:context=".Library">
+    tools:context=".View.Library">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -13,7 +13,29 @@
         android:orientation="vertical">
 
         <include layout="@layout/main_toolbar"/>
+        <include layout="@layout/main_view"/>
 
     </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="300dp"
+        android:layout_height="match_parent"
+        android:layout_gravity="start">
+
+        <include layout="@layout/nav_bar"></include>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/progress">
+
+        <ProgressBar
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_centerInParent="true" />
+
+    </RelativeLayout>
 
 </androidx.drawerlayout.widget.DrawerLayout>

@@ -4,9 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FFFFFF"
-    android:backgroundTint="#EAAD99"
-    tools:context=".Signup">
+    android:background="@color/white"
+    android:backgroundTint="@color/main"
+    tools:context=".View.Signup">
 
 
     <TextView
@@ -14,7 +14,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="REGISTER"
-        android:textColor="#FFFFFF"
+        android:textColor="@color/white"
         android:textSize="24sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"

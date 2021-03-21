@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#EAAD99"
-    tools:context=".Login">
+    tools:context=".View.Login">
 
     <EditText
         android:id="@+id/email"
@@ -45,9 +45,9 @@
         android:id="@+id/go_to_register"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:backgroundTint="#EAAD99"
+        android:backgroundTint="@color/main"
         android:text="Don't have an account? Sign up now"
-        android:textColor="#131212"
+        android:textColor="@color/black"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.502"
@@ -60,7 +60,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="LOGIN"
-        android:textColor="#FFFFFF"
+        android:textColor="@color/white"
         android:textSize="24sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"

@@ -18,15 +18,6 @@
     </LinearLayout>
 
     <RelativeLayout
-        android:layout_width="300dp"
-        android:layout_height="match_parent"
-        android:layout_gravity="start">
-
-        <include layout="@layout/nav_bar"></include>
-
-    </RelativeLayout>
-
-    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:id="@+id/progress">
@@ -35,6 +26,15 @@
             android:layout_width="60dp"
             android:layout_height="60dp"
             android:layout_centerInParent="true" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="300dp"
+        android:layout_height="match_parent"
+        android:layout_gravity="start">
+
+        <include layout="@layout/nav_bar"></include>
 
     </RelativeLayout>
 

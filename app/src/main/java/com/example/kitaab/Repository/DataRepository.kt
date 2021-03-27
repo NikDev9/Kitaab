@@ -1,5 +1,6 @@
 package com.example.kitaab.Repository
 
+import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import com.example.kitaab.Model.BookList
 import com.example.kitaab.Model.Genres
@@ -13,6 +14,7 @@ class DataRepository {
     val allGenres = MutableLiveData<MutableList<Genres>>()
     var userImage = MutableLiveData<String>()
     var userName = MutableLiveData<String>()
+    var userEmailAddress = MutableLiveData<String>()
 
     init {
 
@@ -25,6 +27,7 @@ class DataRepository {
                 val userId = mAuth.currentUser.uid
                 userImage.value = snapshot.child("users/$userId/image").value.toString()
                 userName.value = snapshot.child("users/$userId/fullname").value.toString()
+                userEmailAddress.value = snapshot.child("users/$userId/email").value.toString()
 
                 val books = snapshot.child("books")
                 val tempList : MutableList<Genres> = ArrayList()
@@ -34,7 +37,9 @@ class DataRepository {
                     for(snap2 in snap.children) {
                         val bookName = snap2.child("name").value.toString()
                         val bookImg = snap2.child("coverImg").value.toString()
-                        genreBooks.add(BookList(bookName,bookImg))
+                        val bookId = snap2.child("bookId").value.toString()
+                        //Log.v("myact","ID:::::::::::::::::::::::::::$bookId")
+                        genreBooks.add(BookList(bookName,bookImg, bookId))
                     }
                     tempList.add(Genres(key,genreBooks))
                     allGenres.value = tempList

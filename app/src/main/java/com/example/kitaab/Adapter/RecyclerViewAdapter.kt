@@ -28,11 +28,11 @@ class RecyclerViewAdapter (private val context: Context, private val allGenres: 
 
     override fun onBindViewHolder(holder: MainViewHolder, position: Int) {
         holder.genreTitle!!.text = allGenres[position].GenreTitle
-        setGenreBookRecycler(holder.genreBooksRecycler, allGenres[position].GenreBookList)
+        setGenreBookRecycler(holder.genreBooksRecycler, allGenres[position].GenreBookList, allGenres[position].GenreTitle)
     }
 
-    private fun setGenreBookRecycler(recyclerView: RecyclerView, bookList: List<BookList>) {
-        val bookListRecycler = HorizontalRecyclerAdapter(context, bookList)
+    private fun setGenreBookRecycler(recyclerView: RecyclerView, bookList: List<BookList>, genreTitle: String) {
+        val bookListRecycler = HorizontalRecyclerAdapter(context, bookList, genreTitle)
         recyclerView.layoutManager = LinearLayoutManager(context, RecyclerView.HORIZONTAL, false)
         recyclerView.adapter = bookListRecycler
     }

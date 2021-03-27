@@ -1,4 +1,9 @@
 <resources>
     <string name="app_name">Kitaab</string>
-
+    <string name="menuItem1">Home</string>
+    <string name="menuItem2">Favourites</string>
+    <string name="menuItem3">Add story</string>
+    <string name="menuItem4">Sign out</string>
+    <string name="addToFav">Add to favourites</string>
+    <string name="rating">User reviews</string>
 </resources>

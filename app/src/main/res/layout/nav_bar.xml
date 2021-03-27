@@ -10,7 +10,6 @@
         android:layout_width="match_parent"
         android:layout_height="200dp"
         android:layout_margin="10dp"
-        android:shape="ring"
         android:onClick="OpenProfile"
         android:id="@+id/picture" />
 
@@ -18,7 +17,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/userName"
-        android:textSize="35dp"
+        android:textSize="35sp"
         android:textAlignment="center"
         android:textColor="@color/white" />
 
@@ -29,8 +28,8 @@
         android:drawablePadding="10dp"
         android:layout_marginTop="20dp"
         android:padding="10dp"
-        android:text="Home"
-        android:textSize="20dp"
+        android:text="@string/menuItem1"
+        android:textSize="20sp"
         android:textStyle="bold"
         android:textColor="@color/white"/>
 
@@ -41,8 +40,8 @@
         app:drawableLeftCompat="@drawable/ic_star"
         android:drawablePadding="10dp"
         android:padding="10dp"
-        android:text="Favourites"
-        android:textSize="20dp"
+        android:text="@string/menuItem2"
+        android:textSize="20sp"
         android:textStyle="bold"
         android:textColor="@color/white" />
 
@@ -53,8 +52,8 @@
         app:drawableLeftCompat="@drawable/ic_add"
         android:drawablePadding="10dp"
         android:padding="10dp"
-        android:text="Add book"
-        android:textSize="20dp"
+        android:text="@string/menuItem3"
+        android:textSize="20sp"
         android:textStyle="bold"
         android:textColor="@color/white" />
 
@@ -64,11 +63,11 @@
         app:drawableLeftCompat="@drawable/ic_logout"
         android:drawablePadding="10dp"
         android:padding="10dp"
-        android:text="Sign out"
-        android:textSize="20dp"
+        android:text="@string/menuItem4"
+        android:textSize="20sp"
         android:textStyle="bold"
         android:textColor="@color/white"
         android:clickable="true"
-        android:onClick="signOut" />
+        android:id="@+id/signOutButton"/>
 
 </LinearLayout>

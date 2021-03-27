@@ -4,7 +4,9 @@ import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.view.View
-import android.widget.*
+import android.widget.ImageView
+import android.widget.RelativeLayout
+import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.GravityCompat
 import androidx.core.view.isVisible
@@ -28,6 +30,7 @@ class Library : AppCompatActivity() {
 
     private lateinit var profilePic: ImageView
     private lateinit var userName: TextView
+    private lateinit var signOutButton: TextView
     private lateinit var progress: RelativeLayout
     private lateinit var drawer: DrawerLayout
     private lateinit var mAuth: FirebaseAuth
@@ -38,9 +41,11 @@ class Library : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_library)
 
+        mAuth = FirebaseAuth.getInstance()
         progress = findViewById(R.id.progress)
         profilePic = findViewById(R.id.picture)
         userName = findViewById(R.id.userName)
+        signOutButton = findViewById(R.id.signOutButton)
         storage = FirebaseStorage.getInstance()
         drawer = findViewById(R.id.drawer)
 
@@ -62,10 +67,16 @@ class Library : AppCompatActivity() {
             userName.text = "Hey $it !"
         })
 
+        signOutButton.setOnClickListener {
+            mAuth.signOut()
+            val intent = Intent(this, Login::class.java)
+            startActivity(intent)
+            finish()
+        }
+
     }
 
     private fun setMainRecycler(Genres: List<Genres>) {
-        Log.v(TAG,"SHOW VIEW: $Genres")
         recyclerView = findViewById(R.id.main_recycler)
         val layoutManager: RecyclerView.LayoutManager = LinearLayoutManager(this)
         recyclerView!!.layoutManager = layoutManager
@@ -75,11 +86,4 @@ class Library : AppCompatActivity() {
 
     fun openMenu(view: View) = drawer.openDrawer(GravityCompat.START)
 
-    fun signOut(view: View) {
-        Log.v(TAG,"LOGOUT")
-        mAuth.signOut()
-        val intent = Intent(this, Login::class.java)
-        startActivity(intent)
-        finish()
-    }
 }

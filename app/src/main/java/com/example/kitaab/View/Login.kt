@@ -10,7 +10,6 @@ import android.widget.Toast.LENGTH_SHORT
 import androidx.appcompat.app.AppCompatActivity
 import com.example.kitaab.R
 import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.auth.FirebaseUser
 
 class Login : AppCompatActivity() {
 
@@ -19,7 +18,6 @@ class Login : AppCompatActivity() {
     private lateinit var email: EditText
     private lateinit var password: EditText
     private lateinit var mAuth: FirebaseAuth
-    private lateinit var user: FirebaseUser
 
     override fun onCreate(savedInstanceState: Bundle?) {
 
@@ -27,9 +25,7 @@ class Login : AppCompatActivity() {
         setContentView(R.layout.activity_login)
 
         mAuth = FirebaseAuth.getInstance()
-        user = mAuth.currentUser
-        if(user != null)
-        {
+        if(mAuth.currentUser != null) {
             val intent = Intent(this, Library::class.java)
             startActivity(intent)
             finish()
@@ -59,19 +55,16 @@ class Login : AppCompatActivity() {
                 Toast.makeText(this,"Please enter your email address",LENGTH_SHORT).show()
             else if(password.text.toString().isEmpty())
                 Toast.makeText(this,"Please enter your password",LENGTH_SHORT).show()
-            else
-            {
-                mAuth.signInWithEmailAndPassword(email.text.toString(),password.text.toString())
-                        .addOnCompleteListener { task->
-                            if(task.isSuccessful)
-                            {
-                                val intent = Intent(this, Library::class.java)
-                                startActivity(intent)
-                                finish()
-                            }
-                            else
-                                Toast.makeText(this,"Username or password in incorrect", LENGTH_SHORT).show()
-                        }
+            else {
+                mAuth.signInWithEmailAndPassword(email.text.toString(),password.text.toString()).addOnCompleteListener { task->
+                    if(task.isSuccessful) {
+                        val intent = Intent(this, Library::class.java)
+                        startActivity(intent)
+                        finish()
+                    }
+                    else
+                        Toast.makeText(this,"Username or password is incorrect", LENGTH_SHORT).show()
+                }
             }
         }
     }

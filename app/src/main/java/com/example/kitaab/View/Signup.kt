@@ -7,11 +7,12 @@ import android.widget.*
 import android.widget.Toast.LENGTH_SHORT
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.isVisible
-import com.example.kitaab.Model.User
+import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModelProvider
 import com.example.kitaab.R
+import com.example.kitaab.ViewModel.SignupViewModel
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DatabaseReference
-import com.google.firebase.database.FirebaseDatabase
 
 
 class Signup : AppCompatActivity() {
@@ -33,6 +34,7 @@ class Signup : AppCompatActivity() {
         setContentView(R.layout.activity_signup)
 
         mAuth = FirebaseAuth.getInstance()
+        val SignupViewModel = ViewModelProvider(this).get(SignupViewModel::class.java)
 
         buttonLogin = findViewById(R.id.back_to_login)
         buttonSignUp = findViewById(R.id.sign_up)
@@ -57,48 +59,18 @@ class Signup : AppCompatActivity() {
                 {
                     progress.isVisible = true
                     buttonSignUp.isEnabled = false
-                    mAuth.createUserWithEmailAndPassword(email.text.toString(), pass1.text.toString())
-                        .addOnCompleteListener { task ->
-                            if (task.isSuccessful)
-                            {
-                                userId = mAuth.currentUser!!.uid
-                                dataRef = FirebaseDatabase.getInstance().reference.child("users")
-                                /*val userHashMap = HashMap<String, Any>()
-                                userHashMap["id"] = userId
-                                userHashMap["fullname"] = fullname.text.toString()
-                                userHashMap["email"] = email.text.toString()
-                                userHashMap["image"] = "user images/default_pic.jpg"
-                                userHashMap["description"] = ""*/
-                                //dataRef.updateChildren(userHashMap)
-
-                                dataRef.child(userId).setValue(User(userId,fullname.text.toString(),email.text.toString(),"user images/default_pic.jpg",""))
-                                    .addOnCompleteListener { task ->
-                                        if(task.isSuccessful)
-                                        {
-                                            val intent = Intent(this, Library::class.java)
-                                            intent.putExtra("userId",userId)
-                                            startActivity(intent)
-                                            finish()
-                                        }
-                                        else
-                                        {
-                                            progress.isVisible = false
-                                            buttonSignUp.isEnabled = true
-                                            val errorMsg = task.exception
-                                            Toast.makeText(this,"$errorMsg", LENGTH_SHORT).show()
-                                        }
-                                    }
-                            }
-                            else
-                            {
-                                progress.isVisible = false
-                                buttonSignUp.isEnabled = true
-                                val errorMsg = task.exception
-                                val index = errorMsg.toString().indexOf(':')
-                                val domain: String? = if (index == -1) null else errorMsg.toString().substring(index + 1)
-                                Toast.makeText(this,"$domain", LENGTH_SHORT).show()
-                            }
+                    SignupViewModel.SignUp(email.text.toString(), pass1.text.toString(), fullname.text.toString())
+                    SignupViewModel.returnVal.observe(this, Observer {
+                        if(it == "success") {
+                            val intent = Intent(this, Library::class.java)
+                            startActivity(intent)
+                            finish()
+                        } else {
+                            progress.isVisible = false
+                            buttonSignUp.isEnabled = true
+                            Toast.makeText(this,"$it", LENGTH_SHORT).show()
                         }
+                    })
                 }
             }
             else

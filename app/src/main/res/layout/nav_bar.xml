@@ -35,6 +35,7 @@
 
 
     <TextView
+        android:id="@+id/GotoFav"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:drawableLeftCompat="@drawable/ic_star"
@@ -58,6 +59,7 @@
         android:textColor="@color/white" />
 
     <TextView
+        android:id="@+id/signOutButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:drawableLeftCompat="@drawable/ic_logout"
@@ -67,7 +69,6 @@
         android:textSize="20sp"
         android:textStyle="bold"
         android:textColor="@color/white"
-        android:clickable="true"
-        android:id="@+id/signOutButton"/>
+        android:clickable="true" />
 
 </LinearLayout>

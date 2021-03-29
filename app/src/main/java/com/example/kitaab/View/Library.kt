@@ -31,6 +31,7 @@ class Library : AppCompatActivity() {
     private lateinit var profilePic: ImageView
     private lateinit var userName: TextView
     private lateinit var signOutButton: TextView
+    private lateinit var goToFav: TextView
     private lateinit var progress: RelativeLayout
     private lateinit var drawer: DrawerLayout
     private lateinit var mAuth: FirebaseAuth
@@ -46,6 +47,7 @@ class Library : AppCompatActivity() {
         profilePic = findViewById(R.id.picture)
         userName = findViewById(R.id.userName)
         signOutButton = findViewById(R.id.signOutButton)
+        goToFav = findViewById(R.id.GotoFav)
         storage = FirebaseStorage.getInstance()
         drawer = findViewById(R.id.drawer)
 
@@ -72,6 +74,11 @@ class Library : AppCompatActivity() {
             val intent = Intent(this, Login::class.java)
             startActivity(intent)
             finish()
+        }
+
+        goToFav.setOnClickListener {
+            val intent = Intent(this, Favourites::class.java)
+            startActivity(intent)
         }
 
     }

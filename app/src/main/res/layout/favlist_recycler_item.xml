@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardElevation="5dp"
+    app:cardCornerRadius="5dp"
+    app:cardUseCompatPadding="true">
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@color/main">
+
+        <ImageView
+            android:id="@+id/favBookImage"
+            android:layout_width="100dp"
+            android:layout_height="140dp" />
+
+        <TextView
+            android:id="@+id/removeFromFav"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/favBookImage"
+            app:drawableRightCompat="@drawable/ic_delete"/>
+
+    </RelativeLayout>
+
+</androidx.cardview.widget.CardView>

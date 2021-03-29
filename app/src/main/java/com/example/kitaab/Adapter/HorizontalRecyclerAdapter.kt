@@ -2,14 +2,11 @@ package com.example.kitaab.Adapter
 
 import android.content.Context
 import android.content.Intent
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.AdapterView
 import android.widget.ImageView
 import android.widget.TextView
-import androidx.core.content.ContextCompat.startActivity
 import androidx.recyclerview.widget.RecyclerView
 import com.example.kitaab.Model.BookList
 import com.example.kitaab.R
@@ -41,7 +38,6 @@ class HorizontalRecyclerAdapter (private val context: Context, private val bookL
         }
         holder.bookImg.setOnClickListener{
             val intent = Intent(context,Book::class.java)
-            Log.v("myact","IDHolder:${bookList[position].bookId}")
             intent.putExtra("bookId",bookList[position].bookId)
             intent.putExtra("genre",genre)
             context.startActivity(intent)

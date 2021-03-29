@@ -42,7 +42,7 @@ class BookDetailsViewModel : ViewModel() {
                 val favBooks = snapshot.child("users/$userId/user_library")
                 for(snap in favBooks.children) {
                     if(snap.child("genre").value == genre && snap.child("bookId").value == bookId.toLong())
-                        buttonText.value = "Already in Favourites"
+                        buttonText.value = "Added to Favourites"
                 }
 
                 val tempList : MutableList<BookReviews> = ArrayList()

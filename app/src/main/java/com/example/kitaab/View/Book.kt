@@ -87,7 +87,7 @@ class Book : AppCompatActivity() {
 
     }
 
-    override fun onContextItemSelected(item: MenuItem): Boolean {
+    /*override fun onContextItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {
             android.R.id.home -> {
                 finish()
@@ -95,7 +95,7 @@ class Book : AppCompatActivity() {
             }
         }
         return super.onContextItemSelected(item)
-    }
+    }*/
 
     private fun setMainRecycler(Reviews: List<BookReviews>) {
         recyclerView = findViewById(R.id.reviewRecycler)

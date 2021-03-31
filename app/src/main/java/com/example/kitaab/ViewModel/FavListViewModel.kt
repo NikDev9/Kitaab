@@ -35,6 +35,7 @@ class FavListViewModel : ViewModel() {
                     val bookmark = snap.child("bookmark").value.toString()
                     val image = snap.child("filepath").value.toString()
                     val genre = snap.child("genre").value.toString()
+                    val key = snap.key.toString()
                     tempList.add(FavBook(book, bookId, bookmark, image, genre))
                 }
                 favList.value = tempList
@@ -42,6 +43,11 @@ class FavListViewModel : ViewModel() {
         }
         dataRef.addValueEventListener(data)
 
+    }
+
+    fun removeFromFav(key: Int) {
+        val dataRef2 = databaseRef.getReference("users/$userId")
+        dataRef2.child("user_library/$key").removeValue()
     }
 
 }

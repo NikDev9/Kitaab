@@ -6,4 +6,6 @@
     <string name="menuItem4">Sign out</string>
     <string name="addToFav">Add to favourites</string>
     <string name="rating">User reviews</string>
+    <string name="remove">Remove</string>
+    <string name="removeAlertMessage">Are you sure you want to remove this book from favourites?</string>
 </resources>

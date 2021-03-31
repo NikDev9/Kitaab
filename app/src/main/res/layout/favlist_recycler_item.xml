@@ -7,24 +7,26 @@
     app:cardCornerRadius="5dp"
     app:cardUseCompatPadding="true">
 
-    <RelativeLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:background="@color/main">
-
-        <ImageView
-            android:id="@+id/favBookImage"
-            android:layout_width="100dp"
-            android:layout_height="140dp" />
-
-        <TextView
-            android:id="@+id/removeFromFav"
+        <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/favBookImage"
-            app:drawableRightCompat="@drawable/ic_delete"/>
+            android:orientation="vertical">
 
-    </RelativeLayout>
+                <ImageView
+                    android:id="@+id/favBookImage"
+                    android:layout_width="100dp"
+                    android:layout_height="140dp" />
+
+                <TextView
+                    android:id="@+id/removeFromFav"
+                    android:layout_width="100dp"
+                    android:layout_height="30dp"
+                    android:background="@color/main"
+                    android:text="@string/remove"
+                    android:textColor="@color/white"
+                    android:textStyle="bold"
+                    android:gravity="center" />
+
+        </LinearLayout>
 
 </androidx.cardview.widget.CardView>

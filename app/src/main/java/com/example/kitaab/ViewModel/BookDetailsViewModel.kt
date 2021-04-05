@@ -22,6 +22,7 @@ class BookDetailsViewModel : ViewModel() {
     var numBooks: Long = 0
     lateinit var bookId: String
     lateinit var genre: String
+    lateinit var filename: String
 
     private val mAuth: FirebaseAuth = FirebaseAuth.getInstance()
     val userId = mAuth.currentUser!!.uid
@@ -52,6 +53,7 @@ class BookDetailsViewModel : ViewModel() {
                 synopsis.value = books.child("synopsis").value.toString()
                 image.value = books.child("coverImg").value.toString()
                 name.value = books.child("name").value.toString()
+                filename = books.child("filename").value.toString()
 
                 val reviewsSnap = books.child("reviews")
                 if(!reviewsSnap.hasChildren())
@@ -70,7 +72,7 @@ class BookDetailsViewModel : ViewModel() {
 
     fun addtoFav() {
         val dataRef2 = FirebaseDatabase.getInstance().reference.child("users/$userId")
-        dataRef2.child("user_library/$numBooks").setValue(FavBook("${name.value}", bookId.toLong(), "1", "${image.value}", genre)).addOnCompleteListener { task ->
+        dataRef2.child("user_library/$numBooks").setValue(FavBook("${name.value}", bookId.toLong(), "1", filename, "${image.value}", genre)).addOnCompleteListener { task ->
         }
         //increment number of fav books of the user in the database
         dataRef2.child("bookNum").setValue(numBooks+1).addOnCompleteListener { task ->

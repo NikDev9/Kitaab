@@ -1,18 +1,19 @@
 package com.example.kitaab.Adapter
 
 import android.content.Context
+import android.content.Intent
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.core.content.ContextCompat.startActivity
 import androidx.recyclerview.widget.RecyclerView
 import com.example.kitaab.Model.FavBook
 import com.example.kitaab.R
 import com.example.kitaab.View.Favourites
-import com.example.kitaab.ViewModel.FavListViewModel
+import com.example.kitaab.View.Read
 import com.google.firebase.storage.FirebaseStorage
 import com.squareup.picasso.Picasso
 
@@ -33,11 +34,20 @@ class FavListAdapter (private val context: Context, private val favBooks: List<F
     override fun onBindViewHolder(holder: FavListViewHolder, position: Int) {
         val storage: FirebaseStorage = FirebaseStorage.getInstance()
         val storageRef = storage.reference
-        storageRef.child(favBooks[position].filepath).downloadUrl.addOnSuccessListener {
+        storageRef.child(favBooks[position].coverImg).downloadUrl.addOnSuccessListener {
             Picasso.get().load(it).into(holder.bookImg)
         }
+        holder.bookImg.setOnClickListener {
+            val intent = Intent(context, Read::class.java)
+            intent.putExtra("filepath",favBooks[position].filename)
+            intent.putExtra("genre",favBooks[position].genre)
+            intent.putExtra("bookId",favBooks[position].bookId.toString())
+            intent.putExtra("bookmark",favBooks[position].bookmark)
+            Log.v("myact","ADAPTER: ${favBooks[position].bookId}")
+            context.startActivity(intent)
+        }
         holder.removeButton.setOnClickListener {
-            favListView.showRemoveButton(position)
+            favListView.showRemoveButton(favBooks[position].genre, favBooks[position].bookId)
         }
     }
 }

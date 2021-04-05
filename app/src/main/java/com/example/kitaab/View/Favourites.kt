@@ -47,12 +47,12 @@ class Favourites : AppCompatActivity() {
         recyclerView!!.adapter = FavListAdapter(this,favList, favListView = this)
     }
 
-    fun showRemoveButton(key: Int) {
+    fun showRemoveButton(genre: String, bookId: Long) {
         val builder = AlertDialog.Builder(this)
         builder.setTitle(R.string.remove)
         builder.setMessage(R.string.removeAlertMessage)
         builder.setPositiveButton("Yes"){dialogInterface, which ->
-            favListViewModel.removeFromFav(key)
+            favListViewModel.removeFromFav(genre, bookId)
         }
         builder.setNegativeButton("Cancel"){dialogInterface , which ->
         }

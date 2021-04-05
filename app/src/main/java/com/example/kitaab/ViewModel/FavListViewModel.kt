@@ -33,10 +33,10 @@ class FavListViewModel : ViewModel() {
                     val book = snap.child("book").value.toString()
                     val bookId = snap.child("bookId").value as Long
                     val bookmark = snap.child("bookmark").value.toString()
-                    val image = snap.child("filepath").value.toString()
+                    val image = snap.child("coverImg").value.toString()
                     val genre = snap.child("genre").value.toString()
-                    val key = snap.key.toString()
-                    tempList.add(FavBook(book, bookId, bookmark, image, genre))
+                    val filename = snap.child("filename").value.toString()
+                    tempList.add(FavBook(book, bookId, bookmark, filename, image, genre))
                 }
                 favList.value = tempList
             }
@@ -45,9 +45,21 @@ class FavListViewModel : ViewModel() {
 
     }
 
-    fun removeFromFav(key: Int) {
-        val dataRef2 = databaseRef.getReference("users/$userId")
-        dataRef2.child("user_library/$key").removeValue()
+    fun removeFromFav(genre: String, bookId: Long) {
+        val dataRef2 = databaseRef.getReference("users/$userId/user_library")
+        val data = object: ValueEventListener {
+            override fun onCancelled(error: DatabaseError) {
+            }
+            override fun onDataChange(snapshot: DataSnapshot) {
+                for(snap in snapshot.children) {
+                    if(snap.child("genre").value == genre && snap.child("bookId").value == bookId) {
+                        val ref = databaseRef.getReference("users/$userId/user_library")
+                        ref.child("${snap.key}").removeValue()
+                    }
+                }
+            }
+        }
+        dataRef2.addValueEventListener(data)
     }
 
 }

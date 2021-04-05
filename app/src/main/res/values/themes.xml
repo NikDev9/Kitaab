@@ -16,4 +16,9 @@
         <item name="windowNoTitle">true</item>
     </style>
 
+    <style name="Theme.Kitaab.Fullscreen" parent="Theme.Kitaab">
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowFullscreen">true</item>
+    </style>
+
 </resources>

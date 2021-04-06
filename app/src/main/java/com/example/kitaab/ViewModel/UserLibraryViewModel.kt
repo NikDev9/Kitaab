@@ -6,16 +6,18 @@ import androidx.lifecycle.ViewModel
 import com.example.kitaab.Model.FavBook
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.*
+import com.google.firebase.storage.FirebaseStorage
 
-class FavListViewModel : ViewModel() {
+class UserLibraryViewModel : ViewModel() {
 
     private val databaseRef: FirebaseDatabase = FirebaseDatabase.getInstance()
     private val dataRef: DatabaseReference = databaseRef.reference
-    var favList = MutableLiveData<List<FavBook>>()
-    var numBooks: Long = 0
-
+    private val storage: FirebaseStorage = FirebaseStorage.getInstance()
+    private val storageRef = storage.reference
     private val mAuth: FirebaseAuth = FirebaseAuth.getInstance()
     val userId = mAuth.currentUser!!.uid
+    var favList = MutableLiveData<List<FavBook>>()
+    var selfPublishedList = MutableLiveData<List<FavBook>>()
 
     init {
 
@@ -24,9 +26,8 @@ class FavListViewModel : ViewModel() {
             }
             override fun onDataChange(snapshot: DataSnapshot) {
 
-                //to get the number of books in user's fav list
-                numBooks = snapshot.child("users/$userId/bookNum").value as Long
-                val tempList: MutableList<FavBook> = ArrayList()
+                val tempList1: MutableList<FavBook> = ArrayList()
+                val tempList2: MutableList<FavBook> = ArrayList()
 
                 val favBooks = snapshot.child("users/$userId/user_library")
                 for(snap in favBooks.children) {
@@ -36,9 +37,14 @@ class FavListViewModel : ViewModel() {
                     val image = snap.child("coverImg").value.toString()
                     val genre = snap.child("genre").value.toString()
                     val filename = snap.child("filename").value.toString()
-                    tempList.add(FavBook(book, bookId, bookmark, filename, image, genre))
+                    val self = snap.child("self").value.toString()
+                    if(self == "no")
+                        tempList1.add(FavBook(book, bookId, bookmark, filename, image, genre, self))
+                    else
+                        tempList2.add(FavBook(book, bookId, bookmark, filename, image, genre, self))
                 }
-                favList.value = tempList
+                favList.value = tempList1
+                selfPublishedList.value = tempList2
             }
         }
         dataRef.addValueEventListener(data)
@@ -60,6 +66,35 @@ class FavListViewModel : ViewModel() {
             }
         }
         dataRef2.addValueEventListener(data)
+    }
+
+    fun deleteBook(genre: String, bookId: Long, img: String, filename: String) {
+        //function call
+        removeFromFav(genre,bookId)
+
+        //remove book from firebase database
+        val dataRef3 = databaseRef.getReference("books/$genre")
+        val data = object: ValueEventListener {
+            override fun onCancelled(error: DatabaseError) {
+            }
+            override fun onDataChange(snapshot: DataSnapshot) {
+                for(snap in snapshot.children) {
+                    if(snap.key == bookId.toString()) {
+                        val ref = databaseRef.getReference("books/$genre")
+                        ref.child("$bookId").removeValue()
+                    }
+                }
+            }
+        }
+        dataRef3.addValueEventListener(data)
+
+        //Delete files from firebase storage
+        val imageRef = storageRef.child(img)
+        val fileRef = storageRef.child(filename)
+        imageRef.delete().addOnSuccessListener {
+        }
+        fileRef.delete().addOnSuccessListener {
+        }
     }
 
 }

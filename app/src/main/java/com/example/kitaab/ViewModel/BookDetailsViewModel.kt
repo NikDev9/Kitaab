@@ -36,9 +36,6 @@ class BookDetailsViewModel : ViewModel() {
                 genre = gen
                 bookId = id
 
-                //to get the number of books in user's fav list
-                numBooks = snapshot.child("users/$userId/bookNum").value as Long
-
                 //to check if book is already in user's fav list
                 val favBooks = snapshot.child("users/$userId/user_library")
                 for(snap in favBooks.children) {
@@ -71,12 +68,10 @@ class BookDetailsViewModel : ViewModel() {
     }
 
     fun addtoFav() {
-        val dataRef2 = FirebaseDatabase.getInstance().reference.child("users/$userId")
-        dataRef2.child("user_library/$numBooks").setValue(FavBook("${name.value}", bookId.toLong(), "1", filename, "${image.value}", genre)).addOnCompleteListener { task ->
-        }
-        //increment number of fav books of the user in the database
-        dataRef2.child("bookNum").setValue(numBooks+1).addOnCompleteListener { task ->
-        }
+        val dataRef2 = FirebaseDatabase.getInstance().reference.child("users/$userId/user_library")
+        val newChildRef = dataRef2.push()
+        val key = newChildRef.key.toString()
+        dataRef2.child(key).setValue(FavBook("${name.value}", bookId.toLong(), "1", filename, "${image.value}", genre, "no"))
     }
 
 }

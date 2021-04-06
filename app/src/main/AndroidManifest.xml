@@ -12,10 +12,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Kitaab">
+        <activity android:name=".View.AddBook"></activity>
         <activity
             android:name=".View.Read"
-            android:theme="@style/Theme.Kitaab.Fullscreen"/>
-        <activity android:name=".View.Favourites" />
+            android:theme="@style/Theme.Kitaab.Fullscreen" />
+        <activity android:name=".View.UserLibrary" />
         <activity
             android:name=".View.Book"
             android:noHistory="true"

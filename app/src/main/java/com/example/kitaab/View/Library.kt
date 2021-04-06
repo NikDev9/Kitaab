@@ -2,7 +2,6 @@ package com.example.kitaab.View
 
 import android.content.Intent
 import android.os.Bundle
-import android.util.Log
 import android.view.View
 import android.widget.ImageView
 import android.widget.RelativeLayout
@@ -77,7 +76,7 @@ class Library : AppCompatActivity() {
         }
 
         goToFav.setOnClickListener {
-            val intent = Intent(this, Favourites::class.java)
+            val intent = Intent(this, UserLibrary::class.java)
             startActivity(intent)
         }
 

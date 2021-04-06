@@ -2,7 +2,10 @@ package com.example.kitaab.View
 
 import android.os.Bundle
 import android.util.Log
+import android.widget.ProgressBar
+import android.widget.RelativeLayout
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.view.isVisible
 import androidx.lifecycle.ViewModelProvider
 import com.example.kitaab.R
 import com.example.kitaab.ViewModel.ReadViewModel
@@ -17,12 +20,14 @@ class Read : AppCompatActivity() {
     private lateinit var readViewModel: ReadViewModel
     private lateinit var genre: String
     private lateinit var bookId: String
+    private lateinit var progressBar: RelativeLayout
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_read)
 
         pdfViewer = findViewById(R.id.pdfView)
+        progressBar = findViewById(R.id.readProgressBar)
         val filePathName = intent.getStringExtra("filepath").toString()
         genre = intent.getStringExtra("genre").toString()
         bookId = intent.getStringExtra("bookId").toString()
@@ -39,6 +44,7 @@ class Read : AppCompatActivity() {
                     .enableSwipe(true)
                     .swipeHorizontal(true)
                     .load()
+            progressBar.isVisible = false
         }
     }
 

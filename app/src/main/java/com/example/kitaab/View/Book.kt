@@ -81,21 +81,10 @@ class Book : AppCompatActivity() {
         }
         addToFavButton.setOnClickListener{
             bookDetailsViewModel.addtoFav()
-            this.addToFavButton.text = "Added to Fav"
             this.addToFavButton.isEnabled = false
         }
 
     }
-
-    /*override fun onContextItemSelected(item: MenuItem): Boolean {
-        when (item.itemId) {
-            android.R.id.home -> {
-                finish()
-                return true
-            }
-        }
-        return super.onContextItemSelected(item)
-    }*/
 
     private fun setMainRecycler(Reviews: List<BookReviews>) {
         recyclerView = findViewById(R.id.reviewRecycler)

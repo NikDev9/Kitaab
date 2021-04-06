@@ -8,6 +8,18 @@
     android:orientation="vertical"
     tools:context=".View.Read">
 
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/readProgressBar">
+
+        <ProgressBar
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_centerInParent="true" />
+
+    </RelativeLayout>
+
     <com.github.barteksc.pdfviewer.PDFView
         android:id="@+id/pdfView"
         android:layout_width="match_parent"

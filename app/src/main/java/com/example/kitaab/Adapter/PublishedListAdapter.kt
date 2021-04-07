@@ -41,7 +41,7 @@ class PublishedListAdapter(private val context: Context, private val pubBooks: L
             val intent = Intent(context, Read::class.java)
             intent.putExtra("filepath",pubBooks[position].filename)
             intent.putExtra("genre",pubBooks[position].genre)
-            intent.putExtra("bookId",pubBooks[position].bookId.toString())
+            intent.putExtra("bookId",pubBooks[position].bookId)
             intent.putExtra("bookmark",pubBooks[position].bookmark)
             context.startActivity(intent)
         }

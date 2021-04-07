@@ -32,7 +32,7 @@ class UserLibraryViewModel : ViewModel() {
                 val favBooks = snapshot.child("users/$userId/user_library")
                 for(snap in favBooks.children) {
                     val book = snap.child("book").value.toString()
-                    val bookId = snap.child("bookId").value as Long
+                    val bookId = snap.child("bookId").value.toString()
                     val bookmark = snap.child("bookmark").value.toString()
                     val image = snap.child("coverImg").value.toString()
                     val genre = snap.child("genre").value.toString()
@@ -51,7 +51,7 @@ class UserLibraryViewModel : ViewModel() {
 
     }
 
-    fun removeFromFav(genre: String, bookId: Long) {
+    fun removeFromFav(genre: String, bookId: String) {
         val dataRef2 = databaseRef.getReference("users/$userId/user_library")
         val data = object: ValueEventListener {
             override fun onCancelled(error: DatabaseError) {
@@ -68,7 +68,7 @@ class UserLibraryViewModel : ViewModel() {
         dataRef2.addValueEventListener(data)
     }
 
-    fun deleteBook(genre: String, bookId: Long, img: String, filename: String) {
+    fun deleteBook(genre: String, bookId: String, img: String, filename: String) {
         //function call
         removeFromFav(genre,bookId)
 
@@ -91,10 +91,8 @@ class UserLibraryViewModel : ViewModel() {
         //Delete files from firebase storage
         val imageRef = storageRef.child(img)
         val fileRef = storageRef.child(filename)
-        imageRef.delete().addOnSuccessListener {
-        }
-        fileRef.delete().addOnSuccessListener {
-        }
+        imageRef.delete()
+        fileRef.delete()
     }
 
 }

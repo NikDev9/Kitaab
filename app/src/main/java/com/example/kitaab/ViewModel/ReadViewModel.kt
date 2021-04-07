@@ -13,7 +13,7 @@ class ReadViewModel : ViewModel() {
     val userId = mAuth.currentUser!!.uid
     private lateinit var dataRef: DatabaseReference
 
-    fun markPage(page: Int, genre: String, id: Long) {
+    fun markPage(page: Int, genre: String, id: String) {
         dataRef = databaseRef.getReference("users/$userId/user_library")
         val data = object: ValueEventListener{
             override fun onCancelled(error: DatabaseError) {

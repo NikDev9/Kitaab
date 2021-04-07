@@ -25,12 +25,12 @@ import com.squareup.picasso.Picasso
 
 class Library : AppCompatActivity() {
 
-    private val TAG = "MyActivity"
-
     private lateinit var profilePic: ImageView
     private lateinit var userName: TextView
     private lateinit var signOutButton: TextView
     private lateinit var goToFav: TextView
+    private lateinit var goToHome: TextView
+    private lateinit var addStory: TextView
     private lateinit var progress: RelativeLayout
     private lateinit var drawer: DrawerLayout
     private lateinit var mAuth: FirebaseAuth
@@ -46,7 +46,9 @@ class Library : AppCompatActivity() {
         profilePic = findViewById(R.id.picture)
         userName = findViewById(R.id.userName)
         signOutButton = findViewById(R.id.signOutButton)
-        goToFav = findViewById(R.id.GotoFav)
+        goToFav = findViewById(R.id.goToFav)
+        goToHome= findViewById(R.id.goToHome)
+        addStory = findViewById(R.id.addStory)
         storage = FirebaseStorage.getInstance()
         drawer = findViewById(R.id.drawer)
 
@@ -78,6 +80,15 @@ class Library : AppCompatActivity() {
         goToFav.setOnClickListener {
             val intent = Intent(this, UserLibrary::class.java)
             startActivity(intent)
+        }
+
+        addStory.setOnClickListener {
+            val intent = Intent(this, AddBook::class.java)
+            startActivity(intent)
+        }
+
+        goToHome.setOnClickListener {
+            drawer.closeDrawer(GravityCompat.START)
         }
 
     }

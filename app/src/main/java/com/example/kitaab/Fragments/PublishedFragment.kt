@@ -24,7 +24,6 @@ class PublishedFragment : Fragment() {
     private lateinit var userLibViewModel: UserLibraryViewModel
 
     override fun onCreate(savedInstanceState: Bundle?) {
-        Log.v("myact","publishedfragment")
         super.onCreate(savedInstanceState)
 
         userLibViewModel = ViewModelProvider(this).get(UserLibraryViewModel::class.java)
@@ -51,7 +50,7 @@ class PublishedFragment : Fragment() {
         recyclerView!!.adapter = activity?.let { PublishedListAdapter(it, publishedList, this) }
     }
 
-    fun showAlertDialog(genre: String, bookId: Long, image: String, filename: String) {
+    fun showAlertDialog(genre: String, bookId: String, image: String, filename: String) {
         val builder = AlertDialog.Builder(activity)
         builder.setTitle(R.string.delete)
         builder.setMessage(R.string.deleteAlertMessage)

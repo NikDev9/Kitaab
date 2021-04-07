@@ -51,6 +51,6 @@ class Read : AppCompatActivity() {
     override fun onDestroy() {
         super.onDestroy()
         val page = pdfViewer.currentPage
-        readViewModel.markPage(page, genre, bookId.toLong())
+        readViewModel.markPage(page, genre, bookId)
     }
 }

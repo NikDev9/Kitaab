@@ -26,8 +26,6 @@ class FavBooksFragment : Fragment() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        Log.v("myact","FavBooks")
-
         userLibViewModel = ViewModelProvider(this).get(UserLibraryViewModel::class.java)
         userLibViewModel.favList.observe(this, Observer {
             setRecycler(it)
@@ -53,7 +51,7 @@ class FavBooksFragment : Fragment() {
         recyclerView!!.adapter = activity?.let { FavListAdapter(it, favList, this) }
     }
 
-    fun showRemoveDialog(genre: String, bookId: Long) {
+    fun showRemoveDialog(genre: String, bookId: String) {
         val builder = AlertDialog.Builder(activity)
         builder.setTitle(R.string.remove)
         builder.setMessage(R.string.removeAlertMessage)

@@ -25,8 +25,6 @@ class Signup : AppCompatActivity() {
     private lateinit var pass2: EditText
     private lateinit var progress: ProgressBar
     private lateinit var mAuth: FirebaseAuth
-    private lateinit var dataRef: DatabaseReference
-    private lateinit var userId: String
 
     override fun onCreate(savedInstanceState: Bundle?) {
 

@@ -2,16 +2,18 @@
     <string name="app_name">Kitaab</string>
     <string name="menuItem1">Home</string>
     <string name="menuItem2">Your library</string>
-    <string name="menuItem3">Add story</string>
+    <string name="menuItem3">Publish a story</string>
     <string name="menuItem4">Sign out</string>
     <string name="addToFav">Add to favourites</string>
     <string name="rating">User reviews</string>
     <string name="remove">Remove</string>
-    <string name="removeAlertMessage">Are you sure you want to remove this book from favourites?</string>
     <string name="uploadImage">Select cover image</string>
     <string name="uploadBook">Select book pdf</string>
     <string name="publish">Publish</string>
     <string name="delete">Delete</string>
     <string name="empty">Empty</string>
+    <string name="selectGen">Select Genre</string>
+    <string name="removeAlertMessage">Are you sure you want to remove this book from favourites?</string>
     <string name="deleteAlertMessage">Are you sure you want to delete it from the database?</string>
+    <string name="publishAlertMessage">Please make sure all the details are correct.</string>
 </resources>

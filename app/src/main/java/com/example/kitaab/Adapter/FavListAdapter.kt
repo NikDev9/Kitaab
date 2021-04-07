@@ -40,7 +40,7 @@ class FavListAdapter(private val context: Context, private val favBooks: List<Fa
             val intent = Intent(context, Read::class.java)
             intent.putExtra("filepath",favBooks[position].filename)
             intent.putExtra("genre",favBooks[position].genre)
-            intent.putExtra("bookId",favBooks[position].bookId.toString())
+            intent.putExtra("bookId",favBooks[position].bookId)
             intent.putExtra("bookmark",favBooks[position].bookmark)
             Log.v("myact","ADAPTER: ${favBooks[position].bookId}")
             context.startActivity(intent)

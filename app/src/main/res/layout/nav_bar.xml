@@ -22,6 +22,7 @@
         android:textColor="@color/white" />
 
     <TextView
+        android:id="@+id/goToHome"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:drawableLeftCompat="@drawable/ic_home"
@@ -35,7 +36,7 @@
 
 
     <TextView
-        android:id="@+id/GotoFav"
+        android:id="@+id/goToFav"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:drawableLeftCompat="@drawable/ic_star"
@@ -48,6 +49,7 @@
 
 
     <TextView
+        android:id="@+id/addStory"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:drawableLeftCompat="@drawable/ic_add"

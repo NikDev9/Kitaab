@@ -19,7 +19,6 @@ class BookDetailsViewModel : ViewModel() {
     var reviews = MutableLiveData<List<BookReviews>>()
     var buttonText = MutableLiveData<String>()
     var hideTextView = MutableLiveData<Boolean>()
-    var numBooks: Long = 0
     lateinit var bookId: String
     lateinit var genre: String
     lateinit var filename: String
@@ -39,7 +38,7 @@ class BookDetailsViewModel : ViewModel() {
                 //to check if book is already in user's fav list
                 val favBooks = snapshot.child("users/$userId/user_library")
                 for(snap in favBooks.children) {
-                    if(snap.child("genre").value == genre && snap.child("bookId").value == bookId.toLong())
+                    if(snap.child("genre").value == genre && snap.child("bookId").value == bookId)
                         buttonText.value = "Added to Favourites"
                 }
 
@@ -71,7 +70,7 @@ class BookDetailsViewModel : ViewModel() {
         val dataRef2 = FirebaseDatabase.getInstance().reference.child("users/$userId/user_library")
         val newChildRef = dataRef2.push()
         val key = newChildRef.key.toString()
-        dataRef2.child(key).setValue(FavBook("${name.value}", bookId.toLong(), "1", filename, "${image.value}", genre, "no"))
+        dataRef2.child(key).setValue(FavBook("${name.value}", bookId, "1", filename, "${image.value}", genre, "no"))
     }
 
 }

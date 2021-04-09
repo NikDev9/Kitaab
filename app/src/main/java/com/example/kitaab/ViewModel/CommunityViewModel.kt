@@ -18,9 +18,9 @@ class CommunityViewModel : ViewModel() {
             override fun onDataChange(snapshot: DataSnapshot) {
 
                 val tempList = ArrayList<String>()
-                val genreSnapShot = snapshot.child("books/")
-                for(snap in genreSnapShot.children)
-                    tempList.add(snap.key.toString())
+                val commSnapShot = snapshot.child("community")
+                for(snap in commSnapShot.children)
+                    tempList.add(snap.child("name").value.toString())
                 genres.value = tempList
             }
         }

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:id="@+id/messageLayout"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_weight=".7"
+        android:layout_margin="4dp"
+        android:background="@drawable/message_box"
+        android:backgroundTint="@color/message"
+        android:orientation="vertical"
+        android:visibility="invisible">
+
+        <TextView
+            android:id="@+id/senderName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="12dp"
+            android:paddingTop="4dp"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:id="@+id/senderMessage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="12dp"
+            android:paddingBottom="6dp"
+            android:background="@drawable/message_box"
+            android:backgroundTint="@color/message"
+            android:textSize="14sp"/>
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/userMessage"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_weight=".7"
+        android:layout_alignParentEnd="true"
+        android:layout_margin="4dp"
+        android:background="@drawable/message_box"
+        android:backgroundTint="@color/main"
+        android:padding="16dp"
+        android:textColor="@color/white"
+        android:textSize="14sp"
+        android:visibility="invisible" />
+
+</LinearLayout>

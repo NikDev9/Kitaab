@@ -1,14 +1,17 @@
 package com.example.kitaab.Adapter
 
 import android.content.Context
+import android.content.Intent
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import androidx.core.content.ContextCompat.startActivity
 import androidx.recyclerview.widget.RecyclerView
 import com.example.kitaab.Model.Genres
 import com.example.kitaab.R
+import com.example.kitaab.View.Channel
 import com.google.firebase.storage.FirebaseStorage
 
 class CommunityAdapter(private val context: Context, private val channels: List<String>) : RecyclerView.Adapter<CommunityAdapter.CommunityViewHolder>() {
@@ -26,10 +29,12 @@ class CommunityAdapter(private val context: Context, private val channels: List<
     }
 
     override fun onBindViewHolder(holder: CommunityViewHolder, position: Int) {
-        val storage: FirebaseStorage = FirebaseStorage.getInstance()
-        val storageRef = storage.reference
-
         holder.channelName.text = channels[position]
+        holder.channelName.setOnClickListener {
+            val intent = Intent(context, Channel::class.java)
+            intent.putExtra("name", channels[position])
+            context.startActivity(intent)
+        }
     }
 
 }

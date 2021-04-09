@@ -14,6 +14,8 @@
     <string name="delete">Delete</string>
     <string name="empty">Empty</string>
     <string name="selectGen">Select Genre</string>
+    <string name="typeMsg">Type a message</string>
+    <string name="startConvo">Start a conversation</string>
     <string name="removeAlertMessage">Are you sure you want to remove this book from favourites?</string>
     <string name="deleteAlertMessage">Are you sure you want to delete it from the database?</string>
     <string name="publishAlertMessage">Please make sure all the details are correct.</string>

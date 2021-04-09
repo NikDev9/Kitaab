@@ -21,6 +21,7 @@ import com.example.kitaab.ViewModel.BooksViewModel
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.storage.FirebaseStorage
 import com.squareup.picasso.Picasso
+import org.w3c.dom.Text
 
 
 class Library : AppCompatActivity() {
@@ -31,6 +32,7 @@ class Library : AppCompatActivity() {
     private lateinit var goToFav: TextView
     private lateinit var goToHome: TextView
     private lateinit var addStory: TextView
+    private lateinit var community: TextView
     private lateinit var progress: RelativeLayout
     private lateinit var drawer: DrawerLayout
     private lateinit var mAuth: FirebaseAuth
@@ -49,6 +51,7 @@ class Library : AppCompatActivity() {
         goToFav = findViewById(R.id.goToFav)
         goToHome= findViewById(R.id.goToHome)
         addStory = findViewById(R.id.addStory)
+        community = findViewById(R.id.community)
         storage = FirebaseStorage.getInstance()
         drawer = findViewById(R.id.drawer)
 
@@ -76,17 +79,18 @@ class Library : AppCompatActivity() {
             startActivity(intent)
             finish()
         }
-
         goToFav.setOnClickListener {
             val intent = Intent(this, UserLibrary::class.java)
             startActivity(intent)
         }
-
         addStory.setOnClickListener {
             val intent = Intent(this, AddBook::class.java)
             startActivity(intent)
         }
-
+        community.setOnClickListener {
+            val intent = Intent(this, Community::class.java)
+            startActivity(intent)
+        }
         goToHome.setOnClickListener {
             drawer.closeDrawer(GravityCompat.START)
         }

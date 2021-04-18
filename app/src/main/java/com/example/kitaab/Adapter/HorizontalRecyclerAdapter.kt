@@ -17,7 +17,6 @@ import com.squareup.picasso.Picasso
 class HorizontalRecyclerAdapter (private val context: Context, private val bookList: List<BookList>, private val genre: String) : RecyclerView.Adapter<HorizontalRecyclerAdapter.BookViewHolder>() {
 
     class BookViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        var bookTitle: TextView = itemView.findViewById(R.id.bookName)
         var bookImg: ImageView = itemView.findViewById(R.id.bookImg)
     }
 
@@ -30,7 +29,6 @@ class HorizontalRecyclerAdapter (private val context: Context, private val bookL
     }
 
     override fun onBindViewHolder(holder: BookViewHolder, position: Int) {
-        holder.bookTitle!!.text = bookList[position].bookName
         val storage: FirebaseStorage = FirebaseStorage.getInstance()
         val storageRef = storage.reference
         storageRef.child(bookList[position].bookImage).downloadUrl.addOnSuccessListener {

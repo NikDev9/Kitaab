@@ -21,4 +21,9 @@
         <item name="android:windowFullscreen">true</item>
     </style>
 
+    <style name="RatingBar" parent="Theme.Kitaab">
+        <item name="colorControlActivated">@color/white</item>
+        <item name="colorControlNormal">@color/main</item>
+    </style>
+
 </resources>

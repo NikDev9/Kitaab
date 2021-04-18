@@ -10,13 +10,28 @@
         android:layout_width="match_parent"
         android:background="@color/black"/>
 
-    <TextView
-        android:id="@+id/reviewer"
-        android:layout_width="match_parent"
+    <LinearLayout
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:paddingTop="5dp"
-        android:textStyle="bold"
-        android:textSize="18sp"/>
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/reviewer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="5dp"
+            android:textStyle="bold"
+            android:textSize="18sp"/>
+        <RatingBar
+            android:id="@+id/uRating"
+            android:scaleX="0.5"
+            android:scaleY="0.5"
+            style="?android:attr/ratingBarStyleIndicator"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:progressTint="@color/main" />
+
+    </LinearLayout>
 
     <TextView
         android:id="@+id/review"

@@ -28,14 +28,16 @@ class Read : AppCompatActivity() {
 
         pdfViewer = findViewById(R.id.pdfView)
         progressBar = findViewById(R.id.readProgressBar)
-        val filePathName = intent.getStringExtra("filepath").toString()
         genre = intent.getStringExtra("genre").toString()
         bookId = intent.getStringExtra("bookId").toString()
+        val filePathName = intent.getStringExtra("filepath").toString()
         val defaultPage = intent.getStringExtra("bookmark").toString()
-
         val storage: FirebaseStorage = FirebaseStorage.getInstance()
         val storageRef = storage.reference.child(filePathName)
+
         readViewModel = ViewModelProvider(this).get(ReadViewModel::class.java)
+        readViewModel.setVariables(genre, bookId)
+
         val pageNo = defaultPage.toInt()
         val localFile = File.createTempFile("book", "pdf")
         storageRef.getFile(localFile).addOnSuccessListener {
@@ -51,6 +53,6 @@ class Read : AppCompatActivity() {
     override fun onDestroy() {
         super.onDestroy()
         val page = pdfViewer.currentPage
-        readViewModel.markPage(page, genre, bookId)
+        readViewModel.markPage(page)
     }
 }

@@ -34,7 +34,7 @@ class ChannelViewModel : ViewModel() {
                         for(messages in snap2.children) {
                             val msg = messages.child("message").value.toString()
                             val userId = messages.child("userId").value.toString()
-                            val userName = messages.child("username").value.toString()
+                            val userName = messages.child("userName").value.toString()
                             tempList.add(Message(msg, userId, userName))
                         }
                     }

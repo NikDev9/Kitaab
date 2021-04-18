@@ -13,8 +13,11 @@
     <string name="publish">Publish</string>
     <string name="delete">Delete</string>
     <string name="empty">Empty</string>
+    <string name="rate">Rate:</string>
     <string name="selectGen">Select Genre</string>
     <string name="typeMsg">Type a message</string>
+    <string name="typeReview">Type your review</string>
+    <string name="addReviewButton">Add review</string>
     <string name="startConvo">Start a conversation</string>
     <string name="removeAlertMessage">Are you sure you want to remove this book from favourites?</string>
     <string name="deleteAlertMessage">Are you sure you want to delete it from the database?</string>

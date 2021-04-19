@@ -67,7 +67,8 @@
                 android:id="@+id/spinner"
                 android:layout_width="match_parent"
                 android:layout_height="45dp"
-                android:layout_marginTop="5dp"/>
+                android:layout_marginTop="5dp"
+                android:background="@drawable/border"/>
 
             <Button
                 android:id="@+id/uploadImageButton"
@@ -80,7 +81,7 @@
                 android:id="@+id/uploadPdfbutton"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:text="@string/uploadBook" />
+                android:text="@string/uploadBook"/>
 
             <Button
                 android:id="@+id/publishButton"

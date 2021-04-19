@@ -1,11 +1,9 @@
 package com.example.kitaab.ViewModel
 
-import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.example.kitaab.Model.BookReviews
 import com.example.kitaab.Model.FavBook
-import com.example.kitaab.Model.Message
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.*
 

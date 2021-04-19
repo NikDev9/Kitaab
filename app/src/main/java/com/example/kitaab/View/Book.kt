@@ -88,6 +88,7 @@ class Book : AppCompatActivity() {
         bookDetailsViewModel.buttonText.observe(this, Observer{
             addToFavButton.text = it
             addToFavButton.isEnabled = false
+            Toast.makeText(this, "Go to your library to start reading",Toast.LENGTH_LONG).show()
         })
         bookDetailsViewModel.showReviewBtn.observe(this, Observer{
             addReviewButton.isVisible = true

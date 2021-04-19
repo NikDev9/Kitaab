@@ -47,7 +47,8 @@
             app:tabGravity="fill"
             app:tabMode="fixed"
             app:tabInlineLabel="true"
-            app:tabTextColor="@color/black"/>
+            app:tabTextColor="@color/black"
+            app:tabIndicatorColor="@color/main"/>
 
     </com.google.android.material.appbar.AppBarLayout>
 

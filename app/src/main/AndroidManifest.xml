@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="com.example.kitaab">
+    package="com.nikdev.kitaab">
 
     <uses-permission android:name="android.permission.INTERNET" />
 
@@ -12,25 +12,25 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Kitaab">
-        <activity android:name=".View.Channel"></activity>
-        <activity android:name=".View.Community" />
-        <activity android:name=".View.AddBook" />
+        <activity android:name="com.nikdev.kitaab.View.Channel"></activity>
+        <activity android:name="com.nikdev.kitaab.View.Community" />
+        <activity android:name="com.nikdev.kitaab.View.AddBook" />
         <activity
-            android:name=".View.Read"
+            android:name="com.nikdev.kitaab.View.Read"
             android:theme="@style/Theme.Kitaab.Fullscreen" />
-        <activity android:name=".View.UserLibrary" />
+        <activity android:name="com.nikdev.kitaab.View.UserLibrary" />
         <activity
-            android:name=".View.Book"
+            android:name="com.nikdev.kitaab.View.Book"
             android:noHistory="true"
-            android:parentActivityName=".View.Library" />
-        <activity android:name=".View.Library">
+            android:parentActivityName="com.nikdev.kitaab.View.Library" />
+        <activity android:name="com.nikdev.kitaab.View.Library">
             android:launchMode="singleTop">
         </activity>
         <activity
-            android:name=".View.Signup"
+            android:name="com.nikdev.kitaab.View.Signup"
             android:launchMode="singleTask" />
         <activity
-            android:name=".View.Login"
+            android:name="com.nikdev.kitaab.View.Login"
             android:launchMode="singleTask">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

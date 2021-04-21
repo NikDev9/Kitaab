@@ -1,4 +1,4 @@
-package com.nikdev.kitaab.Adapter
+package com.example.kitaab.Adapter
 
 import android.content.Context
 import android.view.LayoutInflater
@@ -7,8 +7,8 @@ import android.view.ViewGroup
 import android.widget.RatingBar
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import com.nikdev.kitaab.Model.BookReviews
-import com.nikdev.kitaab.R
+import com.example.kitaab.Model.BookReviews
+import com.example.kitaab.R
 
 class ReviewsAdapter (private val context: Context, private val allReviews: List<BookReviews>) : RecyclerView.Adapter<ReviewsAdapter.ReviewViewHolder>() {
 

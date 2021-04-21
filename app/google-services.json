@@ -9,7 +9,7 @@
       "client_info": {
         "mobilesdk_app_id": "1:106508856843:android:a3277941ebf2086c09610e",
         "android_client_info": {
-          "package_name": "com.nikdev.kitaab"
+          "package_name": "com.example.kitaab"
         }
       },
       "oauth_client": [

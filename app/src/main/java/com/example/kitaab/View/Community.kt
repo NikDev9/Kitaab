@@ -1,4 +1,4 @@
-package com.nikdev.kitaab.View
+package com.example.kitaab.View
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -7,9 +7,9 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.nikdev.kitaab.Adapter.CommunityAdapter
-import com.nikdev.kitaab.R
-import com.nikdev.kitaab.ViewModel.CommunityViewModel
+import com.example.kitaab.Adapter.CommunityAdapter
+import com.example.kitaab.R
+import com.example.kitaab.ViewModel.CommunityViewModel
 
 class Community : AppCompatActivity() {
 

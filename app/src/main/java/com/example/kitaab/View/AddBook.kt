@@ -1,4 +1,4 @@
-package com.nikdev.kitaab.View
+package com.example.kitaab.View
 
 import android.app.Activity
 import android.app.AlertDialog
@@ -8,8 +8,8 @@ import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
-import com.nikdev.kitaab.R
-import com.nikdev.kitaab.ViewModel.AddBookViewModel
+import com.example.kitaab.R
+import com.example.kitaab.ViewModel.AddBookViewModel
 import android.net.Uri
 
 

@@ -9,7 +9,7 @@ android {
     buildToolsVersion "30.0.3"
 
     defaultConfig {
-        applicationId "com.nikdev.kitaab"
+        applicationId "com.example.kitaab"
         minSdkVersion 22
         targetSdkVersion 30
         versionCode 1
@@ -44,13 +44,13 @@ dependencies {
     implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.2.0'
     implementation 'androidx.lifecycle:lifecycle-extensions:2.2.0'
 
-    //firebase database, auth and storage dependencies
+    //firebase dependencies
     implementation platform('com.google.firebase:firebase-bom:26.7.0')
     implementation 'com.google.firebase:firebase-auth-ktx'
     implementation 'com.google.firebase:firebase-database-ktx'
     implementation 'com.google.firebase:firebase-storage-ktx'
 
-    //to load image from database
+    //to load images from database
     implementation 'com.squareup.picasso:picasso:2.71828'
 
     //pdf viewer

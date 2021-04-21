@@ -1,4 +1,4 @@
-package com.nikdev.kitaab.ViewModel
+package com.example.kitaab.ViewModel
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel

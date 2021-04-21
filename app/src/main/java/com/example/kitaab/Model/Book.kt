@@ -1,4 +1,4 @@
-package com.nikdev.kitaab.Model
+package com.example.kitaab.Model
 
 data class Book (var author: String,
                  val bookId: String,

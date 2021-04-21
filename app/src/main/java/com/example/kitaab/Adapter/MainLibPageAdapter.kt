@@ -1,4 +1,4 @@
-package com.nikdev.kitaab.Adapter
+package com.example.kitaab.Adapter
 
 import android.content.Context
 import android.view.LayoutInflater
@@ -7,9 +7,9 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.nikdev.kitaab.Model.BookList
-import com.nikdev.kitaab.Model.Genres
-import com.nikdev.kitaab.R
+import com.example.kitaab.Model.BookList
+import com.example.kitaab.Model.Genres
+import com.example.kitaab.R
 
 class MainLibPageAdapter (private val context: Context, private val allGenres: List<Genres>) : RecyclerView.Adapter<MainLibPageAdapter.MainViewHolder>() {
 

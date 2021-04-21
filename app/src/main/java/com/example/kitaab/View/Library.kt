@@ -1,4 +1,4 @@
-package com.nikdev.kitaab.View
+package com.example.kitaab.View
 
 import android.content.Intent
 import android.os.Bundle
@@ -14,10 +14,10 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.nikdev.kitaab.Adapter.RecyclerViewAdapter
-import com.nikdev.kitaab.Model.Genres
-import com.nikdev.kitaab.R
-import com.nikdev.kitaab.ViewModel.BooksViewModel
+import com.example.kitaab.Adapter.MainLibPageAdapter
+import com.example.kitaab.Model.Genres
+import com.example.kitaab.R
+import com.example.kitaab.ViewModel.MainLibraryViewModel
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.storage.FirebaseStorage
 import com.squareup.picasso.Picasso

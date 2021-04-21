@@ -1,4 +1,4 @@
-package com.nikdev.kitaab.Fragments
+package com.example.kitaab.Fragments
 
 import android.app.AlertDialog
 import android.os.Bundle
@@ -11,10 +11,10 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.nikdev.kitaab.Adapter.PublishedListAdapter
-import com.nikdev.kitaab.Model.FavBook
-import com.nikdev.kitaab.R
-import com.nikdev.kitaab.ViewModel.UserLibraryViewModel
+import com.example.kitaab.Adapter.PublishedListAdapter
+import com.example.kitaab.Model.FavBook
+import com.example.kitaab.R
+import com.example.kitaab.ViewModel.UserLibraryViewModel
 
 class PublishedFragment : Fragment() {
 

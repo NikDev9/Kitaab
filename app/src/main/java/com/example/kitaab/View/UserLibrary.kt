@@ -1,4 +1,4 @@
-package com.nikdev.kitaab.View
+package com.example.kitaab.View
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle

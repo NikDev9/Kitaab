@@ -1,10 +1,10 @@
-package com.nikdev.kitaab.ViewModel
+package com.example.kitaab.ViewModel
 
 import android.net.Uri
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.nikdev.kitaab.Model.Book
-import com.nikdev.kitaab.Model.FavBook
+import com.example.kitaab.Model.Book
+import com.example.kitaab.Model.FavBook
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.*
 import com.google.firebase.storage.FirebaseStorage

@@ -1,8 +1,8 @@
-package com.nikdev.kitaab.ViewModel
+package com.example.kitaab.ViewModel
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.nikdev.kitaab.Model.Message
+import com.example.kitaab.Model.Message
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.*
 

@@ -1,18 +1,17 @@
-package com.nikdev.kitaab.View
+package com.example.kitaab.View
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import android.widget.*
 import androidx.core.view.isVisible
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.nikdev.kitaab.Adapter.ReviewsAdapter
-import com.nikdev.kitaab.Model.BookReviews
-import com.nikdev.kitaab.R
-import com.nikdev.kitaab.ViewModel.BookDetailsViewModel
+import com.example.kitaab.Adapter.ReviewsAdapter
+import com.example.kitaab.Model.BookReviews
+import com.example.kitaab.R
+import com.example.kitaab.ViewModel.BookDetailsViewModel
 import com.google.firebase.storage.FirebaseStorage
 import com.squareup.picasso.Picasso
 

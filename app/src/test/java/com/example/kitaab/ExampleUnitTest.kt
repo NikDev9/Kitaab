@@ -1,4 +1,4 @@
-package com.nikdev.kitaab
+package com.example.kitaab
 
 import org.junit.Test
 

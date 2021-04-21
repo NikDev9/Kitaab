@@ -1,3 +1,3 @@
-package com.nikdev.kitaab.Model
+package com.example.kitaab.Model
 
 data class Message (var message: String, var userId: String, var userName: String)

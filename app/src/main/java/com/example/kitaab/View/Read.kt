@@ -1,12 +1,12 @@
-package com.nikdev.kitaab.View
+package com.example.kitaab.View
 
 import android.os.Bundle
 import android.widget.RelativeLayout
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.isVisible
 import androidx.lifecycle.ViewModelProvider
-import com.nikdev.kitaab.R
-import com.nikdev.kitaab.ViewModel.ReadViewModel
+import com.example.kitaab.R
+import com.example.kitaab.ViewModel.ReadViewModel
 import com.github.barteksc.pdfviewer.PDFView
 import com.google.firebase.storage.FirebaseStorage
 import java.io.File

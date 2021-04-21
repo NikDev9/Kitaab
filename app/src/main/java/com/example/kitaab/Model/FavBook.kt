@@ -1,4 +1,4 @@
-package com.nikdev.kitaab.Model
+package com.example.kitaab.Model
 
 data class FavBook (var book: String,
                     var bookId: String,

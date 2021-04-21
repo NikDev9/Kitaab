@@ -1,4 +1,4 @@
-package com.nikdev.kitaab.Adapter
+package com.example.kitaab.Adapter
 
 import android.content.Context
 import android.content.Intent
@@ -7,8 +7,8 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import com.nikdev.kitaab.R
-import com.nikdev.kitaab.View.Channel
+import com.example.kitaab.R
+import com.example.kitaab.View.Channel
 
 class CommunityAdapter(private val context: Context, private val channels: List<String>) : RecyclerView.Adapter<CommunityAdapter.CommunityViewHolder>() {
 

@@ -1,3 +1,3 @@
-package com.nikdev.kitaab.Model
+package com.example.kitaab.Model
 
 data class BookList(var bookName: String, var bookImage: String, var bookId: String)

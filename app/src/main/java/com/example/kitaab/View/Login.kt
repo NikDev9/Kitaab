@@ -1,4 +1,4 @@
-package com.nikdev.kitaab.View
+package com.example.kitaab.View
 
 import android.content.Intent
 import android.os.Bundle
@@ -6,7 +6,7 @@ import android.widget.*
 import android.widget.Toast.LENGTH_SHORT
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.isVisible
-import com.nikdev.kitaab.R
+import com.example.kitaab.R
 import com.google.firebase.auth.FirebaseAuth
 
 class Login : AppCompatActivity() {

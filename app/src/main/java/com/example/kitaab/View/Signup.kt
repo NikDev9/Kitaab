@@ -1,4 +1,4 @@
-package com.nikdev.kitaab.View
+package com.example.kitaab.View
 
 import android.content.Intent
 import android.os.Bundle
@@ -8,8 +8,8 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.isVisible
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
-import com.nikdev.kitaab.R
-import com.nikdev.kitaab.ViewModel.SignupViewModel
+import com.example.kitaab.R
+import com.example.kitaab.ViewModel.SignupViewModel
 import com.google.firebase.auth.FirebaseAuth
 
 

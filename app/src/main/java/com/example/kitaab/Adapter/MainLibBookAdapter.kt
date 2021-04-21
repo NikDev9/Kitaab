@@ -1,4 +1,4 @@
-package com.nikdev.kitaab.Adapter
+package com.example.kitaab.Adapter
 
 import android.content.Context
 import android.content.Intent
@@ -7,9 +7,9 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import androidx.recyclerview.widget.RecyclerView
-import com.nikdev.kitaab.Model.BookList
-import com.nikdev.kitaab.R
-import com.nikdev.kitaab.View.Book
+import com.example.kitaab.Model.BookList
+import com.example.kitaab.R
+import com.example.kitaab.View.BookDetails
 import com.google.firebase.storage.FirebaseStorage
 import com.squareup.picasso.Picasso
 

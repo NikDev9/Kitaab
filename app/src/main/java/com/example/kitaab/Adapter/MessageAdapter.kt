@@ -1,4 +1,4 @@
-package com.nikdev.kitaab.Adapter
+package com.example.kitaab.Adapter
 
 import android.content.Context
 import android.view.LayoutInflater
@@ -8,8 +8,8 @@ import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.core.view.isVisible
 import androidx.recyclerview.widget.RecyclerView
-import com.nikdev.kitaab.Model.Message
-import com.nikdev.kitaab.R
+import com.example.kitaab.Model.Message
+import com.example.kitaab.R
 import com.google.firebase.auth.FirebaseAuth
 
 

@@ -1,4 +1,4 @@
-package com.nikdev.kitaab.Adapter
+package com.example.kitaab.Adapter
 
 import android.content.Context
 import android.content.Intent
@@ -8,10 +8,10 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import com.nikdev.kitaab.Fragments.PublishedFragment
-import com.nikdev.kitaab.Model.FavBook
-import com.nikdev.kitaab.R
-import com.nikdev.kitaab.View.Read
+import com.example.kitaab.Fragments.PublishedFragment
+import com.example.kitaab.Model.FavBook
+import com.example.kitaab.R
+import com.example.kitaab.View.Read
 import com.google.firebase.storage.FirebaseStorage
 import com.squareup.picasso.Picasso
 

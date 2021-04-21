@@ -28,7 +28,7 @@ It is a Kotlin based android application made for book readers. It is named Kita
 To use this code, follow the steps given below:
 - Clone this repository.
 - Make a new project from version control on android studio. (File -> New -> Project from version control)
-- In the 'Get from version control' screen, Paste the HTTPS URL in the URL field.
+- In the 'Get from version control' screen, Paste the HTTPS URL of this repo in the URL field.
 - Click on clone et voila, you are ready to go.
 
 ### External Dependencies

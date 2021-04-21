@@ -10,7 +10,6 @@
         android:layout_width="match_parent"
         android:layout_height="200dp"
         android:layout_margin="10dp"
-        android:onClick="OpenProfile"
         android:id="@+id/picture" />
 
     <TextView
@@ -46,7 +45,6 @@
         android:textSize="20sp"
         android:textStyle="bold"
         android:textColor="@color/white" />
-
 
     <TextView
         android:id="@+id/addStory"

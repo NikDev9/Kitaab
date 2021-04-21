@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:focusableInTouchMode="true"
-    tools:context=".View.Book">
+    tools:context=".View.BookDetails">
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"

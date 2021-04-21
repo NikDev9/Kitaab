@@ -8,8 +8,7 @@
 It is a Kotlin based android application made for book readers. It is named Kitaab based on the Hindi word meaning a book. The app has various books from different genres, including short stories (novellas). Readers can also publish their own books on the app. A unique feature of this application is that it has a community section where readers can have conversations about books. There is a channel dedicated to each genre where people can discuss about their likings and give/take suggestions. 
 
 <p align="center">
-  <img width="220" height="400" src="https://media.giphy.com/media/kfYBnso8PSH8ZYTDG4/giphy.gif"> 
-  <img width="220" height="400" src="https://user-images.githubusercontent.com/46367876/115624838-cedc0380-a318-11eb-9234-c36abd022c1a.png">
+  <img src="https://media.giphy.com/media/kfYBnso8PSH8ZYTDG4/giphy.gif"> 
 </p>
 
 ## Table of contents
@@ -104,6 +103,7 @@ To use the app, follow these steps:
   <img width="180" height="320" src="https://user-images.githubusercontent.com/46367876/115452960-b4ccf300-a23c-11eb-9d58-71bd04887b2e.png">
   <img width="180" height="320" src="https://user-images.githubusercontent.com/46367876/115443523-00799f80-a231-11eb-9eff-0be31efbceeb.png">
   <img width="180" height="320" src="https://user-images.githubusercontent.com/46367876/115443446-e770ee80-a230-11eb-9910-97dedd7464bd.png">
+  <img width="180" height="320" src="https://user-images.githubusercontent.com/46367876/115624838-cedc0380-a318-11eb-9234-c36abd022c1a.png">
 </p>
 
 ## Planned features

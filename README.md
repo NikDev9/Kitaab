@@ -37,7 +37,7 @@ To use this code, follow the steps given below:
   Firebase database to store data of users, community and books.  
   Firebase storage to store files like pdfs, images.  
   Firebase auth to login and register users on the application.  
- Other steps required to set up firebase for your project are given here: [Firebase setup](https://firebase.google.com/docs/android/setup#analytics-not-enabled)  
+ Detailed information to setup firebase for a project is given here: [Firebase setup](https://firebase.google.com/docs/android/setup#analytics-not-enabled)  
   
 NOTE: '-ktx' has to be added for Kotlin based projects.
  
@@ -108,8 +108,8 @@ To use the app, follow these steps:
 
 ## Planned features
 
-- Filter to search by author's or book's name.
-- View other user's profiles.
+- Add filter to search by author's or book's name.
+- View other user's profile.
 - Add another user role (admin) who can approve a user's book before it is published. 
 
 ## Credit
